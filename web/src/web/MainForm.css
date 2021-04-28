@@ -1,0 +1,23 @@
+a{text-decoration: none;}
+ul{list-style: none;}
+
+.MainForm {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: 5px;
+    }
+  
+    
+    body {
+      background-color: rgb(255, 255, 255);
+    }
+    
+    .page {
+      background-color:  #1BBC9B;
+      width: auto;
+      height: 80px;
+      position: relative;
+    }
+    .top_menu a {
+      color: white;
+    }

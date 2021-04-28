@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: 5px;
+  }
+   
+ .SignForm-body {
+    margin: 0;
+    background-color: #1BBC9B;
+  }
+   
+  .signup-form {
+    display: block;
+      width: 300px;
+      background-color: #EEEFF1;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      border: none;
+  }
+  .submit-btn1 {
+    font-size: 12px;
+    border: none;
+    padding: 8px;
+    width: 80px;
+    /* background-color: #1BBC9B; */
+    background-image: linear-gradient(to right, #1BBC9B 50%, #08c2cf 50%, #05eca7);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.3s;
+    margin-bottom: 8px;
+    color: white;
+  }
+  .submit-btn1:hover{
+    background-position: 100% 0%;
+  }
+  .submit-btn {
+    font-size: 14px;
+    border: none;
+    padding: 10px;
+    width: 260px;
+    /* background-color: #1BBC9B; */
+    background-image: linear-gradient(to right, #1BBC9B 50%, #08c2cf 50%, #02c584);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.3s;
+    margin-bottom: 30px;
+    color: white;
+  }
+  .submit-btn:hover{
+    background-position: 100% 0%;
+  }
+
+     
+  .text-field {
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    width: 260px;
+    margin-bottom: 10px;
+
+}
+
+
+.links {
+  text-align: center;
+}
+
+.links a {
+font-size: 12px;
+color: #9B9B9B;
+}
+
