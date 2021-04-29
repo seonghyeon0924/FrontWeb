@@ -15,12 +15,12 @@
       background-color: #EEEFF1;
       margin-right: auto;
       margin-left: auto;
-      margin-top: 50px;
+      margin-top: 30px;
       padding: 20px;
       text-align: center;
-      border-style: solid;
+      /* border-style: solid;
       border-width: thin;
-      border-color: #1BBC9B;
+      border-color: #1BBC9B; */
   }
 /* 
   .login-form:focus{
@@ -54,13 +54,14 @@
         margin-bottom: 10px;
    
   }
-/*    
-  .iogo {
-    width: 300px;
-    height: 300px;
+
+  .loginlogo{
+    height: 130px;
+    width: 130px;
     display: block;
-    margin: 0px 0px 500px 0px;
-  } */
+    margin: 0 auto;
+    margin-top: 30px;
+  }
 
 
   .links {

@@ -6,9 +6,9 @@ export default function LoginForm() {
         <>
 <html>
         <body>
-            {/* <div className="logo">
-                <img src="logo.PNG" alt=""></img>
-            </div> */}
+            <div className="loginlogo">
+                <img src="image/logo.jpg" className="loginlogo"/>
+            </div>
             <div className="login-form">
                 <form>
                 <input type="text" name="email" class="text-field" placeholder="아이디"></input>
