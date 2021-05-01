@@ -7,12 +7,11 @@ export default function MainForm() {
     return (
     <>
 <html>
-    <body>
         <div className="page">
             <header>
                  <div className="logo">
                     {/* 왼쪽에 로고넣기 */}
-                    <img src ="/image/logo2.jpg" className="logos"/>
+                    <img src ="/image/logo22.png" className="logos"/>
                  </div>
               {/* 로그인, 비로그인 일 때 메뉴 다르게 하기 */}
                  <div className="top_menu">
@@ -27,10 +26,35 @@ export default function MainForm() {
                </div>
             </header>
         </div>
+        <body>
+        {/* 전체적인 피드 보이는 구간 */}
             <div className="feed">
-            <h1>메인</h1>
+
+            {/* 유저 하나의 피드 */}
+            <div className="usercontents">
+
+            {/* 업로더 이름 */}
+                <div className="username">
+                <img src="image/profi1.jpg" className="profile"></img>
+                    <p className="nickname">OMG</p>  
+                    <br></br>      
+                </div>
+                <hr className="line"></hr>
+                <div className="titles">
+              {/* 게시물 본문 */}
+              <p className="title">엄청나고 굉장한 음악</p> 
+              </div>
+
+                {/* 음악 게시물  */}
+                <div className="Music">
+                    <audio src ="sound/sound1.mp3" controls autoPlay loop></audio>
+                </div>
+            </div>
             </div>  
-        
+           
+                {/* <div className="info">
+                    <p>팀 명 등등</p>
+                </div> */}
     </body>
 </html>
 

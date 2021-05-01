@@ -1,13 +1,15 @@
 import React from 'react'
 import './LoginForm.css';
 
+
 export default function LoginForm() {
     return (
         <>
 <html>
         <body>
+        <div className="container">
             <div className="loginlogo">
-                <img src="image/logo.jpg" className="loginlogo"/>
+                <img src="image/logo3.jpg" className="loginlogo"/>
             </div>
             <div className="login-form">
                 <form>
@@ -19,8 +21,10 @@ export default function LoginForm() {
                 <div className="links">
                 <a href="#2">회원가입 하기</a>
                 <br></br>
+                <hr className="hr1"></hr>
                 <a href="#">아이디, 비밀번호 찾기</a>
                 </div>
+            </div>
             </div>
         </body>
 </html>

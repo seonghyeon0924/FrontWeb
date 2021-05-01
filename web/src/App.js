@@ -7,8 +7,8 @@ import SignupForm from './web/SignupForm';
 function App() {
   return (
     <div className="App">
-    {/* <MainForm/> */}
-<LoginForm/>
+    <MainForm/>
+{/* <LoginForm/> */}
 {/* <SignupForm/> */}
     </div>
     

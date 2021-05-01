@@ -9,9 +9,11 @@ export default function SignupForm() {
         <>
 <html>
         <body>
+        <div className="container">
             <div className="signup-form">
                 <form>
-                <input type="text" name="email" class="text-field" placeholder="아이디"></input>
+                <input type="text" name="id" class="text-field" placeholder="아이디"></input>
+                <input type="text" name="email" class="text-field" placeholder="이메일"></input>
                 <input type="password" name="password" class="text-field" placeholder="비밀번호"></input>
                 <input type="text" name="name" class="text-field" placeholder="이름"></input>
                 <input type="text" name="nickname" class="text-field" placeholder="닉네임"></input>
@@ -24,8 +26,10 @@ export default function SignupForm() {
                 <div className="links">
                 <a href="#2">로그인</a>
                 <br></br>
+                <hr className="hr1"></hr>
                 <a href="#">아이디, 비밀번호 찾기</a>
                 </div>
+            </div>
             </div>
         </body>
 </html>

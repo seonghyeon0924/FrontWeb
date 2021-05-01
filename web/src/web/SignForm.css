@@ -4,18 +4,17 @@
     border-radius: 5px;
   }
    
- .SignForm-body {
-    margin: 0;
-    background-color: #1BBC9B;
-  }
+body{
+  background-color: #eeeeee;
+}
    
   .signup-form {
     display: block;
       width: 300px;
-      background-color: #EEEFF1;
+      background-color: #ffffff;
       margin-right: auto;
       margin-left: auto;
-      margin-top: 50px;
+      margin-top: 110px;
       padding: 20px;
       text-align: center;
       border: none;
@@ -60,7 +59,7 @@
     border: none;
     width: 260px;
     margin-bottom: 10px;
-
+    
 }
 
 
@@ -73,3 +72,12 @@ font-size: 12px;
 color: #9B9B9B;
 }
 
+.container{
+  margin:0 auto;
+  width: 300px;
+  height: auto;
+  background-color: #ffffff;
+}
+.hr1 {
+  width: 120px;
+}
