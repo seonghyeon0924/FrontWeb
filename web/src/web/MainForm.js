@@ -15,10 +15,10 @@ export default function MainForm() {
                  </div>
               {/* 로그인, 비로그인 일 때 메뉴 다르게 하기 */}
                  <div className="top_menu">
-                    <a href="@"> 홈 </a>
-                    <a href="@">| 뭐지 </a>
-                    <a href="@">| 로그인 </a>
-                    <a href="@">| Mypage</a>
+                    <a href="@"> Home </a>
+                    <a href="@">| Streaming </a>
+                    <a href="@">| Logout </a>
+                    <a href="@">| Mypage </a>
                  </div>
                 <div className="searchline"> 
                     <input type="submit" value="검색" class="searchbtn"></input>
@@ -36,7 +36,7 @@ export default function MainForm() {
             {/* 업로더 이름 */}
                 <div className="username">
                 <img src="image/profi1.jpg" className="profile"></img>
-                    <p className="nickname">OMG</p>  
+                    <p className="nickname">도성경</p>  
                     <br></br>      
                 </div>
                 <hr className="line"></hr>

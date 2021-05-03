@@ -37,6 +37,16 @@ ul{list-style: none;}
       float: right;
 
     }
+    .my_menu {
+      margin-left: 50px;
+      margin-top: 38px;
+      margin-right: 10px;
+      float: left;
+    }
+
+    .my_menu a{
+      color:white;
+    }
     .searchbtn {
       float: right;
       font-size: 10px;
