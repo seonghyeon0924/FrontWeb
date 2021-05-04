@@ -1,0 +1,162 @@
+a{text-decoration: none;}
+ul{list-style: none;}
+
+.MainForm {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: 5px;
+    height: auto;
+    overflow: hidden;
+    margin:0;
+    padding: 0;
+    }
+  
+    
+    /* body {
+      background-color: rgb(255, 255, 255);
+    } */
+    
+
+
+    .page {
+      background-color:  #1BBC9B;
+      width: auto;
+      height: 100px;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .top_menu a {
+      color: white;
+    }
+
+
+
+
+
+    .top_menu {
+      margin-top: 38px;
+      margin-right: 10px;
+      float: right;
+
+    }
+    .my_menu {
+      margin-left: 50px;
+      margin-top: 38px;
+      margin-right: 10px;
+      float: left;
+    }
+
+    .my_menu a{
+      color:white;
+    }
+    .searchbtn {
+      float: right;
+      font-size: 10px;
+      border: none;
+      padding: 10px;
+      width: 50px;
+      margin-right: 17px;
+      margin-top: 32px;
+    }  
+    .main-text-field {
+      font-size: 10px;
+      padding: 10px;
+      border: none;
+      width: 150px;
+      margin-bottom: 10px;
+      margin-top: 32px;
+      float:right;
+    }
+    /* .info{
+      background-color:  #526662;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    } */
+
+    .feed{
+    margin-bottom: 30px;
+    }
+
+    .logos2 {
+      width: 400px;
+      height: 400px;
+    }
+    
+
+    
+    .logos3 {
+      width: 400px;
+      height: 400px;
+    }
+
+    .logos {
+      float: left;
+      width: 100px;
+      height: 100px;
+    }
+
+    .usercontents {
+      margin-top: 20;
+  
+      margin:0 auto;
+      width: 450px;
+      height: 350px;
+      background-color: #ffffff;
+    }
+
+    .mainlogo{
+      height: 160px;
+      width: 160px;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    /* profile , nickname 감싸는 틀 */
+    .uploader {
+      width: 450px;
+      height: 45px;
+      position: relative;
+      float: left;
+      margin-bottom: 20px;
+    }
+
+    /* 유저 개인 프로필 사진 */
+    .profile {
+      margin-left: 10px;
+      margin-top: 10px;
+      width: 40px;
+      height: 40px;
+    }
+
+    /* 유저 닉네임 */
+    .nickname {
+      margin-left: 60px;
+      font-size: 14px;
+    }
+
+    .line {
+      size: 2px;
+      width: 90%;
+      color: gray;
+    }
+
+
+
+    /* 제목 혹은 게시글 */
+
+    .titles {
+      height: 100px;
+    }
+    .title {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .Music{
+      text-align: center;
+      margin-top: 10px;
+      width: 450px;
+      height: 300px;
+    }

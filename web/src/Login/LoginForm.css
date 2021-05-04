@@ -1,0 +1,82 @@
+
+   html {
+     background-color: #eeeeee;
+   }
+   .body {
+    background-color: #eeeeee;
+   }
+
+
+   /* 아이디 비밀번호 로그인 회원가입,찾기 */
+  .login-form {
+      display: block;
+      width: 300px;
+      background-color: #ffffff;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+      /* border-style: solid;
+      border-width: thin;
+      border-color: #1BBC9B; */
+  }
+/* 
+  .login-form:focus{
+    box-shadow: 0px 0px 3px rgba(0,0,0.2);
+  } */
+
+  .submit-btn {
+    font-size: 14px;
+    border: none;
+    padding: 10px;
+    width: 260px;
+    /* background-color: #1BBC9B; */
+    background-image: linear-gradient(to right, #1BBC9B 50%, #08c2cf 50%, #02c584);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.3s;
+    margin-bottom: 30px;
+    color: white;
+  }
+  .submit-btn:hover{
+    background-position: 100% 0%;
+  }
+   
+  
+
+  .text-field {
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        width: 260px;
+        margin-bottom: 10px;
+        background-color: #e6e6e6;
+   
+  }
+
+  .loginlogo{
+    height: 160px;
+    width: 160px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 110px;
+  }
+
+
+  .links {
+      text-align: center;
+  }
+   
+  .links a {
+    font-size: 12px;
+    color: #9B9B9B;
+  }
+
+  .container{
+    /* border-style: ridge; */
+    margin:0 auto;
+    width: 300px;
+    height: auto;
+    background-color: #ffffff;
+  }

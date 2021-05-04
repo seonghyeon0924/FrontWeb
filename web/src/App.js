@@ -1,9 +1,12 @@
 
 import './App.css';
-import LoginForm from './web/LoginForm';
-import MainForm from './web/MainForm';
-import MypageForm from './web/MypageForm';
-import SignupForm from './web/SignupForm';
+import LoginForm from './Login/LoginForm';
+import MainForm from './Main/MainForm';
+// import MusicFeed from './MusicFeed/MusicFeed';
+import MypageForm from './Mypage/MypageForm';
+import SignupForm from './Signup/SignupForm';
+
+
 
 function App() {
   return (
