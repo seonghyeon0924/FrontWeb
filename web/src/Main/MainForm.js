@@ -1,9 +1,11 @@
 import React from 'react'
 import './MainForm.css';
 import MusicFeed from './MusicFeed';
+
 // import {Button, Input} from 'semantic-ui-react'
 // import logo from '.image/logo.jpg';
-
+// npm install redux-devtools-extension
+//npm add axios
 export default function MainForm() {
     return (
     <>
@@ -12,7 +14,7 @@ export default function MainForm() {
             <header>
                  <div className="logo">
                     
-                    <img src ="/image/logo22.png" className="logos"/>
+                    <img src ="/image/logo55.jpg" className="logos"/>
                  </div>
               {/* 로그인, 비로그인 일 때 메뉴 다르게 하기 */}
                  <div className="top_menu">
@@ -30,9 +32,9 @@ export default function MainForm() {
         <body>
         <MusicFeed name="도성경" title="무야호"></MusicFeed>
         <MusicFeed name="김종규" title="CCNA"></MusicFeed>
-        <MusicFeed name="도구" title="응우티옌"></MusicFeed>
-        <MusicFeed name="도라지" title="무야호홍"></MusicFeed>
-        <MusicFeed name="도라에몽" title="무야호호호호옹"></MusicFeed>
+        <MusicFeed name="도구" title="왈왈"></MusicFeed>
+        <MusicFeed name="강동훈" title="PayPhone"></MusicFeed>
+        <MusicFeed name="박창민" title="COIN"></MusicFeed>
 
     </body>
 </html>

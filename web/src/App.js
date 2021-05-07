@@ -7,14 +7,11 @@ import MypageForm from './Mypage/MypageForm';
 import SignupForm from './Signup/SignupForm';
 
 
-
 function App() {
   return (
     <div className="App">
-    {/* <MainForm/> */}
-{/* <LoginForm/> */}
-{/* <SignupForm/> */}
-<MypageForm/>
+    {/* <LoginForm/> */}
+    <MainForm/>
     </div>
     
   );

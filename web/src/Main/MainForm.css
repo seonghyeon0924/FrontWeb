@@ -2,6 +2,7 @@ a{text-decoration: none;}
 ul{list-style: none;}
 
 .MainForm {
+
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
     border-radius: 5px;
@@ -19,14 +20,14 @@ ul{list-style: none;}
 
 
     .page {
-      background-color:  #1BBC9B;
+      background-color:  #BEDCFA;
       width: auto;
       height: 100px;
       position: relative;
       margin-bottom: 40px;
     }
     .top_menu a {
-      color: white;
+      color: rgb(161, 161, 161);
     }
 
 

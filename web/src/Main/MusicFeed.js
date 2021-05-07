@@ -28,7 +28,8 @@ class MusicFeed extends Component {
 
     {/* 음악 게시물  */}
     <div className="Music">
-        <audio src ="sound/sound1.mp3" controls autoPlay loop ></audio>
+        <audio src ="sound/sound1.mp3" controls ></audio>
+        {/* autoPlay loop */}
     </div>
 </div>
 </div>  
