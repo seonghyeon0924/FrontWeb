@@ -1,27 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './LoginForm.css';
 import axios from 'axios';
+import ReactDOM from "react-dom";
 // import React, {useState} from 'react'
 // import { useDispatch } from 'react-redux'
 
 
 
 export default function LoginForm() {
-    const [inputId, setInputId] = useState('')
-    const [inputPw, setInputPw] = useState('')
-
-        // input 데이터의 변화가 있을 때마다 value 값을 변경해서 useState해줌
-    const handleInputId = (e) => {
-        setInputId(e.target.value)
-    }
-
-    const handleInputPw = (e) => {
-        setInputPw(e.target.value)
-    }
-
-    const onClickLogin = () => {
-        console.log('click login')
-    }
 
     //axios.get(url,[,config])  서버에서 데이터를 가져와서 보여주거나 하는 용도
     // ex)axios.get('https://my-json-server.typicode.com/zofqofhtltm8015/fs/user').then((Response)=>{
@@ -41,17 +27,40 @@ export default function LoginForm() {
     //     axios.get()
     // })
 
+    const JWT_EXPIRRY_TIME = 24 * 3600 * 1000; //만료시간 (24시간 밀리 초로 표현)
 
-    const login = async () =>
-    {
-        axios.get("https://f904adec-09cc-4aec-b2e3-db9aceeb3abf.mock.pstmn.io??id="+tjdgus+"&pw="+tjdgus)
-            .then(() =>
-            {
-                console.log("Login 성공!");
-                setInputId('');
-                setInputPw('');
+    const onLogin = (id, password) => {
+            const data = {
+                id,
+                password,
+            };
+
+            axios.post('/Login', data)
+            .then(onLoginSuccess)
+            .catch(error => {
+                //에러처리
             });
-    };
+    }
+
+
+//    const onRefresh = () => {
+//         axios.post('/refresh', data)
+//         .then(onLoginSuccess)
+//         .catch(error => {
+//             //로그인 실패 처리
+//         });
+//     }
+
+   const onLoginSuccess = response => {
+        const {accessToken} = response.data;
+
+        //accessToken 설정
+        axios.defaults.headers.common['Authorization'] = 'Bearer ${accessToken}';
+
+    //     //accessToken 만료하기 1분전에 로그인 연장
+    //     setTimeout(onRefresh, JWT_EXPIRRY_TIME - 60000);
+    }
+
 
     return (
         <>
@@ -63,9 +72,9 @@ export default function LoginForm() {
             </div>
             <div className="login-form">
                 <form>
-                <input type="text" value={inputId} name="email" class="text-field" placeholder="아이디" onChange={handleInputId}></input>
-                <input type="password" value={inputPw} name="password" class="text-field" placeholder="비밀번호" onChange={handleInputPw}></input>
-                <input type="submit" value="로그인" class="submit-btn" onClick={onClickLogin}></input>
+                <input type="text"name="id" class="text-field" placeholder="아이디" value="id"></input>
+                <input type="password" name="password" class="text-field" placeholder="비밀번호" value="password" ></input>
+                <input type="submit" class="submit-btn" onClick={onLogin}></input>
                 </form>
 
                 <div className="links">
