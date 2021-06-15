@@ -8,59 +8,36 @@ import ReactDOM from "react-dom";
 
 
 export default function LoginForm() {
+    const [id , setid] = useState("")
+    const [password, setpassword] = useState("")
 
-    //axios.get(url,[,config])  서버에서 데이터를 가져와서 보여주거나 하는 용도
-    // ex)axios.get('https://my-json-server.typicode.com/zofqofhtltm8015/fs/user').then((Response)=>{
-    //     console.log(Response.data);
-    // }).catch((Error)=>{
-    //     console.log(Error);
-    // })
-    
+    const onIdHandler = (e) => {
+        setid(e.currentTarget.value);
+    }
 
-    // //axios.post("url주소", {
-    //     data객체
-    // },[,config])  새로운 리소스를 create하는데 사용
-    // 로그인, 회원가입 등 사용자가 생성한 파일을 서버에다가 업로드할때 사용. post사용 시 주소창에 쿼리스트링이 남지 않으므로 get보다 안전
-
-
-    // useEffect(() => {
-    //     axios.get()
-    // })
-
-    const JWT_EXPIRRY_TIME = 24 * 3600 * 1000; //만료시간 (24시간 밀리 초로 표현)
-
-    const onLogin = (id, password) => {
-            const data = {
-                id,
-                password,
-            };
-
-            axios.post('/Login', data)
-            .then(onLoginSuccess)
-            .catch(error => {
-                //에러처리
-            });
+    const onPasswordHandler = (e) => {
+        setpassword(e.currentTarget.value);
     }
 
 
-//    const onRefresh = () => {
-//         axios.post('/refresh', data)
-//         .then(onLoginSuccess)
-//         .catch(error => {
-//             //로그인 실패 처리
-//         });
-//     }
+    const onLogin = () => {
+        axios({
+            method: 'post',
+            url: '/accounts/login',
+            data: {
+                "ID" : id,
+                "PW" : password,
+            }
+        }).then(res => {
+            const { ACCESS_TOKEN } = res.data;
+            const { REFRESH_TOKEN } = res.data;
 
-   const onLoginSuccess = response => {
-        const {accessToken} = response.data;
+            // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
+            axios.defaults.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`; 
+            axios.defaults.headers.common['Authorization'] = `Bearer ${REFRESH_TOKEN}`;      
 
-        //accessToken 설정
-        axios.defaults.headers.common['Authorization'] = 'Bearer ${accessToken}';
-
-    //     //accessToken 만료하기 1분전에 로그인 연장
-    //     setTimeout(onRefresh, JWT_EXPIRRY_TIME - 60000);
+        }).catch(error => console.log(error));
     }
-
 
     return (
         <>
@@ -72,8 +49,8 @@ export default function LoginForm() {
             </div>
             <div className="login-form">
                 <form>
-                <input type="text"name="id" class="text-field" placeholder="아이디" value="id"></input>
-                <input type="password" name="password" class="text-field" placeholder="비밀번호" value="password" ></input>
+                <input type="text"name="id" class="text-field" placeholder="아이디" value="id" onChange={onIdHandler}></input>
+                <input type="password" name="password" class="text-field" placeholder="비밀번호" value="password" onChange={onPasswordHandler} ></input>
                 <input type="submit" class="submit-btn" onClick={onLogin}></input>
                 </form>
 

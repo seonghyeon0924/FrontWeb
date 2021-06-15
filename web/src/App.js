@@ -15,7 +15,8 @@ function App() {
     {/* <LoginForm/> */}
     {/* <MainForm/> */}
     {/* <MusicFeed/> */}
-    <Myinfo/>
+    {/* <Myinfo/> */}
+    <SignupForm/>
     </div>
     
   );
