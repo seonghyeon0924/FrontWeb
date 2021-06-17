@@ -29,13 +29,13 @@ export default function LoginForm() {
                 "PW" : password,
             }
         }).then(res => {
-            const { ACCESS_TOKEN } = res.data;
-            const { REFRESH_TOKEN } = res.data;
-
+            const { ACCESS_TOKEN } = res.data.access_TOKEN;
+            const { REFRESH_TOKEN } = res.data.refresh_TOKEN;
+            console.log(res.data.access_TOKEN)
             // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
             axios.defaults.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`; 
             axios.defaults.headers.common['Authorization'] = `Bearer ${REFRESH_TOKEN}`;      
-
+            console.log(ACCESS_TOKEN,REFRESH_TOKEN);
         }).catch(error => console.log(error));
     }
 
@@ -49,8 +49,8 @@ export default function LoginForm() {
             </div>
             <div className="login-form">
                 <form>
-                <input type="text"name="id" class="text-field" placeholder="아이디" value="id" onChange={onIdHandler}></input>
-                <input type="password" name="password" class="text-field" placeholder="비밀번호" value="password" onChange={onPasswordHandler} ></input>
+                <input type="text"name={id} class="text-field" placeholder="아이디"  onChange={onIdHandler}></input>
+                <input type="password" name={password} class="text-field" placeholder="비밀번호"  onChange={onPasswordHandler} ></input>
                 <input type="submit" class="submit-btn" onClick={onLogin}></input>
                 </form>
 
