@@ -51,7 +51,7 @@ export default function LoginForm() {
                 <form>
                 <input type="text"name={id} class="text-field" placeholder="아이디"  onChange={onIdHandler}></input>
                 <input type="password" name={password} class="text-field" placeholder="비밀번호"  onChange={onPasswordHandler} ></input>
-                <input type="submit" class="submit-btn" onClick={onLogin}></input>
+                <input type="submit" class="submit-btn" onClick={onLogin}>로그인</input>
                 </form>
 
                 <div className="links">

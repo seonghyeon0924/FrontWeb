@@ -12,11 +12,11 @@ import SignupForm from './Signup/SignupForm';
 function App() {
   return (
     <div className="App">
-    <LoginForm/>
+    {/* <LoginForm/> */}
     {/* <MainForm/> */}
     {/* <MusicFeed/> */}
     {/* <Myinfo/> */}
-    {/* <SignupForm/> */}
+    <SignupForm/>
     </div>
     
   );

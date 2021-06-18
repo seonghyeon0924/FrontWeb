@@ -9,7 +9,7 @@ axios.defaults.baseURL = " 주소 "
 
 //true로 해줘야 refresh 토큰 주고받음
 axios.defaults.withCredentials = true;
-ReactDOM.render(
+  ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

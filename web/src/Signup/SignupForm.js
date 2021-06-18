@@ -11,66 +11,63 @@ axios.defaults.withCredentials = true;
 export default function SignupForm() {
     // const dispatch = useDispatch();
   
-    const [id , setid] = useState("")
-    const [email, setemail] = useState("")
-    const [password, setpassword] = useState("")
-    const [username, setusername] = useState("")
+    const [id , setId] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("")
 
     const onIdHandler = (e) => {
-        setid(e.currentTarget.value);
+        setId(e.currentTarget.value)
+        console.log(e.currentTarget.value)
     }
 
     const onEmailHandler = (e) => {
-        setemail(e.currentTarget.value);
+        setEmail(e.currentTarget.value)
     }
 
     const onPasswordHandler = (e) => {
-        setpassword(e.currentTarget.value);
+        setPassword(e.currentTarget.value)
     }
 
     const onUsernameHandler = (e) => {
-        setusername(e.currentTarget.value);
+        setUsername(e.currentTarget.value)
     }
 
     
-    const onSubmit = () => {
-        axios.post('http://49.50.161.97:8888/accounts',{
-            data: {
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        axios({
+            method : 'post',
+            url : '/accounts',
+            data : {
                 id : id,
+                emial : email,
                 pw : password,
-                username : username,
-                email : email
-                
+                username : username
             }
         }).then(res => {
-            const { access_TOKEN } = res.data.access_TOKEN;
-            const { refresh_TOKEN } = res.data.refresh_TOKEN;
             console.log(res);
-            console.log(res.data);
-            console.log(access_TOKEN,refresh_TOKEN);
-
-            // // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-            // axios.defaults.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`; 
-            // axios.defaults.headers.common['Authorization'] = `Bearer ${REFRESH_TOKEN}`;      
-
-        }).catch(errorMessage => console.log(errorMessage));
+            console.log('check')
+        }).catch(
+            error => console.log(error)
+        )
     }
+        
+        
         return (
         <>
-<html>
-        <body>
         <div className="container">
             <div className="signup-form">
-                <form>
+                <form onSubmit={onSubmitHandler}>
                 <input type="text"  name={id} class="text-field" placeholder="아이디" onChange={onIdHandler}></input>
                 <input type="email" name={email} class="text-field" placeholder="이메일" onChange={onEmailHandler}></input>
                 <input type="password" name={password} class="text-field" placeholder="비밀번호" onChange={onPasswordHandler}></input>
                 <input type="text" name={username} class="text-field" placeholder="이름" onChange={onUsernameHandler}></input>
-                <br/>
-                <input type="submit" onClick={onSubmit} value="회원가입" class="submit-btn"></input>
-                </form>
+                        <br/>
+                        <input type="submit" value="회원가입" class="submit-btn"></input>
+                        </form>
 
-                <div className="links">
+                        <div className="links">
                 <a href="#2">로그인</a>
                 <br></br>
                 <hr className="hr1"></hr>
@@ -78,8 +75,7 @@ export default function SignupForm() {
                 </div>
             </div>
             </div>
-        </body>
-</html>
         </>
-    )
+        )
 }
+
