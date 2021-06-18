@@ -13,7 +13,7 @@ export default function SignupForm() {
   
     const [id , setId] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [pw, setPassword] = useState("")
     const [username, setUsername] = useState("")
 
     const onIdHandler = (e) => {
@@ -38,11 +38,11 @@ export default function SignupForm() {
         e.preventDefault();
         axios({
             method : 'post',
-            url : '/accounts',
+            url : '/api/accounts',
             data : {
                 id : id,
-                emial : email,
-                pw : password,
+                email : email,
+                pw : pw,
                 username : username
             }
         }).then(res => {
@@ -61,7 +61,7 @@ export default function SignupForm() {
                 <form onSubmit={onSubmitHandler}>
                 <input type="text"  name={id} class="text-field" placeholder="아이디" onChange={onIdHandler}></input>
                 <input type="email" name={email} class="text-field" placeholder="이메일" onChange={onEmailHandler}></input>
-                <input type="password" name={password} class="text-field" placeholder="비밀번호" onChange={onPasswordHandler}></input>
+                <input type="password" name={pw} class="text-field" placeholder="비밀번호" onChange={onPasswordHandler}></input>
                 <input type="text" name={username} class="text-field" placeholder="이름" onChange={onUsernameHandler}></input>
                         <br/>
                         <input type="submit" value="회원가입" class="submit-btn"></input>
