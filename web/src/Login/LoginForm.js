@@ -9,7 +9,7 @@ import ReactDOM from "react-dom";
 
 export default function LoginForm() {
     const [id , setid] = useState("")
-    const [password, setpassword] = useState("")
+    const [pw, setpassword] = useState("")
 
     const onIdHandler = (e) => {
         setid(e.currentTarget.value);
@@ -18,26 +18,22 @@ export default function LoginForm() {
     const onPasswordHandler = (e) => {
         setpassword(e.currentTarget.value);
     }
+    const formData = new FormData();
+    formData.append("id", 'test1');
+    formData.append("pw", 'test1');
 
-
-    const onLogin = () => {
-        axios({
-            method: 'post',
-            url: '/accounts/login',
-            data: {
-                "ID" : id,
-                "PW" : password,
-            }
-        }).then(res => {
-            const { ACCESS_TOKEN } = res.data.access_TOKEN;
-            const { REFRESH_TOKEN } = res.data.refresh_TOKEN;
-            console.log(res.data.access_TOKEN)
-            // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-            axios.defaults.headers.common['Authorization'] = `Bearer ${ACCESS_TOKEN}`; 
-            axios.defaults.headers.common['Authorization'] = `Bearer ${REFRESH_TOKEN}`;      
-            console.log(ACCESS_TOKEN,REFRESH_TOKEN);
-        }).catch(error => console.log(error));
-    }
+    const onLogin = (e) => {
+        e.preventDefault();
+        axios.post("http://49.50.161.97:8888/accounts/login", formData, {withCredentials: true})
+            .then(res =>
+            {
+                const data = res.data;
+                console.log(res);
+            }).catch(reason =>
+            {
+                console.log(reason);
+            });
+        }            
 
     return (
         <>
@@ -48,10 +44,28 @@ export default function LoginForm() {
                 <img src="image/logo444.jpg" className="loginlogo"/>
             </div>
             <div className="login-form">
-                <form>
-                <input type="text"name={id} class="text-field" placeholder="아이디"  onChange={onIdHandler}></input>
-                <input type="password" name={password} class="text-field" placeholder="비밀번호"  onChange={onPasswordHandler} ></input>
-                <input type="submit" class="submit-btn" onClick={onLogin}>로그인</input>
+                <form onSubmit={onLogin}>
+                <input type ="text" name={id} class="text-field" placeholder="아이디" onChange={onIdHandler} ></input>
+                <input type="password" name={pw} class="text-field" placeholder="비밀번호" onChange={onPasswordHandler}></input>
+                <input type="submit" value="로그인" class="submit-btn"></input>
+
+
+                {/* <input> </input> 
+                <div value={id} class="text-field" placeholder="아이디"  onChange={onIdHandler}> </div>
+
+                
+
+
+                <input></input>
+                <div value={password} class="text-field" placeholder="비밀번호"  onChange={onPasswordHandler} >
+                </div>
+                
+
+                
+                <input></input>
+                <div class="submit-btn" >로그인
+                
+                </div> */}
                 </form>
 
                 <div className="links">

@@ -23,35 +23,65 @@ export default function SignupForm() {
 
     const onEmailHandler = (e) => {
         setEmail(e.currentTarget.value)
+        console.log(e.currentTarget.value)
     }
 
     const onPasswordHandler = (e) => {
         setPassword(e.currentTarget.value)
+        console.log(e.currentTarget.value)
     }
 
     const onUsernameHandler = (e) => {
         setUsername(e.currentTarget.value)
+        console.log(e.currentTarget.value)
     }
 
-    
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("pw", pw);
+    formData.append("email", email);
+    formData.append("username", username);
+
+
+    // const formData = new FormData();
+    // formData.append("id", 'test9');
+    // formData.append("pw", 'test9');
+    // formData.append("email", 'test9@naver.com');
+    // formData.append("username", 'test9');
+
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        axios({
-            method : 'post',
-            url : '/api/accounts',
-            data : {
-                id : id,
-                email : email,
-                pw : pw,
-                username : username
-            }
-        }).then(res => {
-            console.log(res);
-            console.log('check')
-        }).catch(
-            error => console.log(error)
-        )
-    }
+        axios.post("http://49.50.161.97:8888/accounts", formData, {withCredentials: true})
+            .then(res =>
+            {
+                const data = res.data;
+                console.log(res);
+            }).catch(reason =>
+            {
+                console.log(reason);
+            });
+        }            
+
+
+    
+    // const onSubmitHandler = (e) => {
+    //     e.preventDefault();
+    //     axios({
+    //         method : 'post',
+    //         url : '/accounts',
+    //         data : {
+    //             id : id,
+    //             email : email,
+    //             pw : pw,
+    //             username : username
+    //         }
+    //     }).then(res => {
+    //         console.log(res.data);
+    //         console.log('check')
+    //     }).catch(
+    //         error => console.log(error)
+    //     )
+    // }
         
         
         return (
