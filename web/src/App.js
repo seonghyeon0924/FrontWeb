@@ -17,7 +17,7 @@ function App() {
     {/* <MusicFeed/> */}
     {/* <Myinfo/> */}
     {/* <SignupForm/> */}
-    <FindAccount/>
+    {/* <FindAccount/> */}
     </div>
     
   );

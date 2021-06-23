@@ -1,7 +1,7 @@
 import { Component } from "react";
 
 
-class Myinfo extends Component {
+export default class Myinfo extends Component {
     // usestate로 이름 바꾸기 기능
 
     render() {
@@ -52,5 +52,3 @@ class Myinfo extends Component {
         );
     }
 }
-
-export default Myinfo;

@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import axios from 'axios';
+import Routes from './Routes.js';
 
 // axios.defaults.baseURL = " 주소 "
 
@@ -11,7 +10,7 @@ import axios from 'axios';
 // axios.defaults.withCredentials = true;
   ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Routes />
   </React.StrictMode>,
   document.getElementById('root')
 );

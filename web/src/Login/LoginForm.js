@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import {useCallback, useEffect, useState} from "react";
 import './LoginForm.css';
 import axios from 'axios';
-import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 // import React, {useState} from 'react'
 // import { useDispatch } from 'react-redux'
-
+import { useHistory } from "react-router";
 
 
 export default function LoginForm() {
+    let history = useHistory();
     const [id , setid] = useState("")
     const [pw, setpassword] = useState("")
 
@@ -27,8 +29,19 @@ export default function LoginForm() {
         axios.post("http://49.50.161.97:8888/accounts/login", formData, {withCredentials: true})
             .then(res =>
             {
-                const data = res.data;
+               
+                history.push("/board");
+                
+
+                const ACCESS_TOKEN = res.data.access_TOKEN;
+                const REFRESH_TOLEN = res.data.refresh_TOKEN;
+
+                
                 console.log(res);
+                console.log(res.data.access_TOKEN);
+                console.log(res.data.refresh_TOKEN);
+                console.log(ACCESS_TOKEN,REFRESH_TOLEN);
+
             }).catch(reason =>
             {
                 console.log(reason);
@@ -48,32 +61,15 @@ export default function LoginForm() {
                 <input type ="text" name={id} class="text-field" placeholder="아이디" onChange={onIdHandler} ></input>
                 <input type="password" name={pw} class="text-field" placeholder="비밀번호" onChange={onPasswordHandler}></input>
                 <input type="submit" value="로그인" class="submit-btn"></input>
-
-
-                {/* <input> </input> 
-                <div value={id} class="text-field" placeholder="아이디"  onChange={onIdHandler}> </div>
-
-                
-
-
-                <input></input>
-                <div value={password} class="text-field" placeholder="비밀번호"  onChange={onPasswordHandler} >
-                </div>
-                
-
-                
-                <input></input>
-                <div class="submit-btn" >로그인
-                
-                </div> */}
                 </form>
 
                 <div className="links">
-                <a href="#2">회원가입 하기</a>
-                <br></br>
-                <hr className="hr1"></hr>
-                <a href="#">아이디, 비밀번호 찾기</a>
+                    <Link to="/signup">회원가입 하기</Link>
+                    <hr></hr>
+                    <Link to="/find">아이디, 비밀번호 찾기</Link>
                 </div>
+
+                
             </div>
             </div>
         </body>

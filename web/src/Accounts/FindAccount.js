@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 // import React, {useState} from 'react'
 // import { useDispatch } from 'react-redux'
 
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 
 export default function FindAccount() {
@@ -41,10 +42,8 @@ export default function FindAccount() {
 <html>
         <body>
         <div className="container">
-            <div className="loginlogo">
-                <img src="image/logo444.jpg" className="loginlogo"/>
-            </div>
-            <div className="login-form">
+           
+            <div className="find-form">
                 <form onSubmit={onLogin}>
                 <input type ="text" name={id} class="text-field" placeholder="아이디" onChange={onIdHandler} ></input>
                 <input type="password" name={email} class="text-field" placeholder="이메일" onChange={onEmailHandler}></input>
@@ -52,10 +51,9 @@ export default function FindAccount() {
                 </form>
 
                 <div className="links">
-                <a href="#2">로그인 하기</a>
-                <br></br>
-                <hr className="hr1"></hr>
-                <a href="#">회원가입 하기</a>
+                    <Link to="/">로그인</Link>
+                    <hr></hr>
+                    <Link to="/signup">회원가입</Link>
                 </div>
             </div>
             </div>

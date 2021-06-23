@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './SignForm.css';
 import {Button, Input} from 'semantic-ui-react'
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 // React 최상단 index.js에서 axios에 withCredentials를 true로 설정해줘야 refreshToken cookie를 주고받을 수 있다.
 
@@ -99,10 +100,13 @@ export default function SignupForm() {
                         </form>
 
                         <div className="links">
-                <a href="#2">로그인</a>
+                            <Link to="/">로그인</Link>
+                            <hr size="5"></hr>
+                            <Link to="find">아이디, 비밀번호 찾기</Link>
+                {/* <a href="#2">로그인</a>
                 <br></br>
                 <hr className="hr1"></hr>
-                <a href="#">아이디, 비밀번호 찾기</a>
+                <a href="#">아이디, 비밀번호 찾기</a> */}
                 </div>
             </div>
             </div>

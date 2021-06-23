@@ -30,11 +30,9 @@ export default function MainForm() {
             </header>
         </div>
         <body>
-        <MusicFeed name="도성경" title="무야호"></MusicFeed>
-        <MusicFeed name="김종규" title="CCNA"></MusicFeed>
+        <MusicFeed name="리액트뮤직" title="으악"></MusicFeed>
         <MusicFeed name="도구" title="왈왈"></MusicFeed>
-        <MusicFeed name="강동훈" title="PayPhone"></MusicFeed>
-        <MusicFeed name="박창민" title="COIN"></MusicFeed>
+
 
     </body>
 </html>

@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class MusicFeed extends Component {
+export default class MusicFeed extends Component {
     render() {
         return(
             <>
@@ -38,4 +38,4 @@ class MusicFeed extends Component {
     }
 }
 
-export default MusicFeed;
+

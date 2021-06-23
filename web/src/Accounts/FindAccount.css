@@ -8,19 +8,17 @@
 
 
   /* 아이디 비밀번호 로그인 회원가입,찾기 */
- .login-form {
-     display: block;
-     width: 300px;
-     background-color: #ffffff;
-     margin-right: auto;
-     margin-left: auto;
-     margin-top: 20px;
-     padding: 20px;
-     text-align: center;
-     /* border-style: solid;
-     border-width: thin;
-     border-color: #1BBC9B; */
- }
+  .find-form {
+    display: block;
+      width: 300px;
+      background-color: #ffffff;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 110px;
+      padding: 20px;
+      text-align: center;
+      border: none;
+  }
 /* 
  .login-form:focus{
    box-shadow: 0px 0px 3px rgba(0,0,0.2);

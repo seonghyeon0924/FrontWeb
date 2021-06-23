@@ -15,7 +15,7 @@ export default function MypageForm() {
             <header>
                  <div className="logo">
                     {/* 왼쪽에 로고넣기 */}
-                    <img src ="/image/logo22.png" className="logos"/>
+                    <img src ="/image/logo22.png" className="logos" alt="logo"/>
                  </div>
 
                  <div className="top_menu">
