@@ -9,11 +9,6 @@ class Myinfo extends Component {
             <>
                      <h1 className="h1my">Mypage</h1>
                 <div className="myprofile">
-
-       
-
-                   
-                   
                     <div className="curproflie">    
                         {/* 프로필 */}
                         <div className="curnick">

@@ -17,7 +17,7 @@ export default function MypageForm() {
                     {/* 왼쪽에 로고넣기 */}
                     <img src ="/image/logo22.png" className="logos"/>
                  </div>
-              {/* 로그인, 비로그인 일 때 메뉴 다르게 하기 */}
+
                  <div className="top_menu">
                     <a href="@"> Home </a>
                     <a href="@">| Streaming </a>

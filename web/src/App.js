@@ -7,7 +7,7 @@ import Myinfo from './Mypage/Myinfo';
 // import MusicFeed from './MusicFeed/MusicFeed';
 import MypageForm from './Mypage/MypageForm';
 import SignupForm from './Signup/SignupForm';
-
+import FindAccount from './Accounts/FindAccount';
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
     {/* <MainForm/> */}
     {/* <MusicFeed/> */}
     {/* <Myinfo/> */}
-    <SignupForm/>
+    {/* <SignupForm/> */}
+    <FindAccount/>
     </div>
     
   );

@@ -54,12 +54,13 @@ export default function SignupForm() {
         axios.post("http://49.50.161.97:8888/accounts", formData, {withCredentials: true})
             .then(res =>
             {
-                const data = res.data;
                 console.log(res);
+                console.log(res.data.access_TOKEN);
+                console.log(res.data.refresh_TOKEN);
             }).catch(reason =>
             {
                 console.log(reason);
-            });
+                });
         }            
 
 

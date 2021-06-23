@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './LoginForm.css';
+import './FindAccount.css';
 import axios from 'axios';
 import ReactDOM from "react-dom";
 // import React, {useState} from 'react'
@@ -7,28 +7,29 @@ import ReactDOM from "react-dom";
 
 
 
-export default function LoginForm() {
+export default function FindAccount() {
     const [id , setid] = useState("")
-    const [pw, setpassword] = useState("")
+    const [email, setemail] = useState("")
 
     const onIdHandler = (e) => {
         setid(e.currentTarget.value);
     }
 
-    const onPasswordHandler = (e) => {
-        setpassword(e.currentTarget.value);
+    const onEmailHandler = (e) => {
+        setemail(e.currentTarget.value);
     }
     const formData = new FormData();
     formData.append("id", id);
-    formData.append("pw", pw);
+    formData.append("email", email);
 
     const onLogin = (e) => {
         e.preventDefault();
-        axios.post("http://49.50.161.97:8888/accounts/login", formData, {withCredentials: true})
+        axios.post("http://49.50.161.97:8888/accounts/find", formData, {withCredentials: true})
             .then(res =>
             {
                 const data = res.data;
                 console.log(res);
+                alert("이메일을 확인하세요");
             }).catch(reason =>
             {
                 console.log(reason);
@@ -46,33 +47,15 @@ export default function LoginForm() {
             <div className="login-form">
                 <form onSubmit={onLogin}>
                 <input type ="text" name={id} class="text-field" placeholder="아이디" onChange={onIdHandler} ></input>
-                <input type="password" name={pw} class="text-field" placeholder="비밀번호" onChange={onPasswordHandler}></input>
-                <input type="submit" value="로그인" class="submit-btn"></input>
-
-
-                {/* <input> </input> 
-                <div value={id} class="text-field" placeholder="아이디"  onChange={onIdHandler}> </div>
-
-                
-
-
-                <input></input>
-                <div value={password} class="text-field" placeholder="비밀번호"  onChange={onPasswordHandler} >
-                </div>
-                
-
-                
-                <input></input>
-                <div class="submit-btn" >로그인
-                
-                </div> */}
+                <input type="password" name={email} class="text-field" placeholder="이메일" onChange={onEmailHandler}></input>
+                <input type="submit" value="비밀번호변경" class="submit-btn"></input>
                 </form>
 
                 <div className="links">
-                <a href="#2">회원가입 하기</a>
+                <a href="#2">로그인 하기</a>
                 <br></br>
                 <hr className="hr1"></hr>
-                <a href="#">아이디, 비밀번호 찾기</a>
+                <a href="#">회원가입 하기</a>
                 </div>
             </div>
             </div>
