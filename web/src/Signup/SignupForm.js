@@ -1,3 +1,5 @@
+
+import { useHistory } from "react-router";
 import React, { useState } from 'react'
 import './SignForm.css';
 import {Button, Input} from 'semantic-ui-react'
@@ -6,11 +8,14 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 // React 최상단 index.js에서 axios에 withCredentials를 true로 설정해줘야 refreshToken cookie를 주고받을 수 있다.
 
+
+
 // npm install --save semantic-ui-react semantic-ui-css
 
 
 export default function SignupForm() {
     // const dispatch = useDispatch();
+    let history = useHistory();
   
     const [id , setId] = useState("")
     const [email, setEmail] = useState("")
@@ -55,6 +60,9 @@ export default function SignupForm() {
         axios.post("http://49.50.161.97:8888/accounts", formData, {withCredentials: true})
             .then(res =>
             {
+                
+                history.push("/");
+                alert("회원가입 성공");
                 console.log(res);
                 console.log("ACCESS토큰 : "+res.data.access_TOKEN);
                 console.log("REFRESH토큰 : "+res.data.refresh_TOKEN);
