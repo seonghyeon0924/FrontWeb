@@ -4,7 +4,7 @@ import React from 'react'
 
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
-export default function Board() {
+export default function BoardForm() {
 
 
     return (
@@ -21,10 +21,10 @@ export default function Board() {
                      </div>
                   {/* 로그인, 비로그인 일 때 메뉴 다르게 하기 */}
                      <div className="top_menu">
-                     <Link to="/boardup">글쓰기</Link>
-                     <Link to="/main">| 뮤직피드</Link>
-                     <Link to="/">| 로그아웃</Link>
-                     <Link to="/mypage">| 마이페이지</Link>
+                     <Link to="/boardup">글쓰기 </Link>
+                     <Link to="/main">| 뮤직피드 </Link>
+                     <Link to="/">| 로그아웃 </Link>
+                     <Link to="/mypage">| 마이페이지 </Link>
 
                         {/* <a href="@"> 글쓰기 </a>
                         <a href="@">| 뮤직피드 </a>
@@ -39,7 +39,7 @@ export default function Board() {
             </div>
             <body>
     
-    
+    <h1>BoardForm 입네당</h1>
         </body>
     </html>
     

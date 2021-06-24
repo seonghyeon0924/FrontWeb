@@ -2,6 +2,7 @@ import React from 'react'
 import './MainForm.css';
 import MusicFeed from './MusicFeed';
 
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 // import {Button, Input} from 'semantic-ui-react'
 // import logo from '.image/logo.jpg';
 // npm install redux-devtools-extension
@@ -18,10 +19,10 @@ export default function MainForm() {
                  </div>
               {/* 로그인, 비로그인 일 때 메뉴 다르게 하기 */}
                  <div className="top_menu">
-                    <a href="@"> Home </a>
-                    <a href="@">| Streaming </a>
-                    <a href="@">| Logout </a>
-                    <a href="@">| Mypage </a>
+                     <Link to="/musicup">음악 업로드 </Link>
+                     <Link to="/board">| 메인피드 </Link>
+                     <Link to="/">| 로그아웃 </Link>
+                     <Link to="/mypage">| 마이페이지 </Link>
                  </div>
                 <div className="searchline"> 
                     <input type="submit" value="검색" class="searchbtn"></input>

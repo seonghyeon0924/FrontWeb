@@ -10,8 +10,9 @@ import MainForm from './Main/MusicForm';
 import FindAccount from './Accounts/FindAccount';
 import history from './history';
 import BoardUpload from './Main/BoardUpload';
-import Board from './Main/BoardForm';
 import Myinfo from './Mypage/Myinfo';
+import BoardForm from './Main/BoardForm';
+import MusicUpload from './Main/MusicUpload';
 
 class Routes extends React.Component {
     render() {
@@ -23,8 +24,9 @@ class Routes extends React.Component {
             <Route exact path="/main" component={MainForm} />
             <Route exact path="/find" component={FindAccount}/>
             <Route exact path="/boardup" component={BoardUpload}/>
-            <Route exact path="/board" component={Board}/>
+            <Route exact path="/board" component={BoardForm}/>
             <Route exact path="/mypage" component={Myinfo}/>
+            <Route exact path="/musicup" component={MusicUpload}></Route>
           </Switch>
         </Router>
       )

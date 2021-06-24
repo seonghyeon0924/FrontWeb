@@ -56,8 +56,8 @@ export default function SignupForm() {
             .then(res =>
             {
                 console.log(res);
-                console.log(res.data.access_TOKEN);
-                console.log(res.data.refresh_TOKEN);
+                console.log("ACCESS토큰 : "+res.data.access_TOKEN);
+                console.log("REFRESH토큰 : "+res.data.refresh_TOKEN);
             }).catch(reason =>
             {
                 console.log(reason);
@@ -103,10 +103,6 @@ export default function SignupForm() {
                             <Link to="/">로그인</Link>
                             <hr size="5"></hr>
                             <Link to="find">아이디, 비밀번호 찾기</Link>
-                {/* <a href="#2">로그인</a>
-                <br></br>
-                <hr className="hr1"></hr>
-                <a href="#">아이디, 비밀번호 찾기</a> */}
                 </div>
             </div>
             </div>

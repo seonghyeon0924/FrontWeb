@@ -38,12 +38,12 @@ export default function LoginForm() {
 
                 
                 console.log(res);
-                console.log(res.data.access_TOKEN);
-                console.log(res.data.refresh_TOKEN);
-                console.log(ACCESS_TOKEN,REFRESH_TOLEN);
-
+                console.log("ACCESS토큰 : "+ACCESS_TOKEN);
+                console.log("REFRESH토큰 : "+REFRESH_TOLEN);
+            
             }).catch(reason =>
             {
+                alert("아이디 혹은 비밀번호가 다릅니다");
                 console.log(reason);
             });
         }            
