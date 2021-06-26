@@ -24,36 +24,35 @@ export default function SignupForm() {
 
     const onIdHandler = (e) => {
         setId(e.currentTarget.value)
-        console.log(e.currentTarget.value)
+        console.log("입력된 아이디 : "+e.currentTarget.value)
     }
 
     const onEmailHandler = (e) => {
         setEmail(e.currentTarget.value)
-        console.log(e.currentTarget.value)
+        console.log("입력된 이메일 : "+e.currentTarget.value)
     }
 
     const onPasswordHandler = (e) => {
         setPassword(e.currentTarget.value)
-        console.log(e.currentTarget.value)
+        console.log("입력된 패스워드 : "+e.currentTarget.value)
     }
 
     const onUsernameHandler = (e) => {
         setUsername(e.currentTarget.value)
-        console.log(e.currentTarget.value)
+        console.log("입력된 유저이름 : "+e.currentTarget.value)
     }
 
-    const formData = new FormData();
-    formData.append("id", id);
-    formData.append("pw", pw);
-    formData.append("email", email);
-    formData.append("username", username);
-
-
+   
     // const formData = new FormData();
     // formData.append("id", 'test9');
     // formData.append("pw", 'test9');
     // formData.append("email", 'test9@naver.com');
     // formData.append("username", 'test9');
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("pw", pw);
+    formData.append("email", email);
+    formData.append("username", username);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -72,8 +71,6 @@ export default function SignupForm() {
                 });
         }            
 
-
-    
     // const onSubmitHandler = (e) => {
     //     e.preventDefault();
     //     axios({

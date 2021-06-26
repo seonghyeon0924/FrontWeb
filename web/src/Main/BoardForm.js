@@ -1,4 +1,8 @@
 // 전체 게시물이 보이는 곳
+// 전체 게시물을 반환 ( 페이징 처리)
+// 요청 PAGE (DEFAULT = 0) / ID ( 게시물 가져올 계정 )
+// 응답 BOARD_LIST : 0 <= N <= 0
+
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 export default function BoardForm() {
